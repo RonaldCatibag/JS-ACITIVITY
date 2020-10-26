@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hands-On Exercise# 1</h1>
+      <form>
+        <h2>
+          birthday:
+          <input type="date" id="d" min="1962" max="2020" />
+          <button onclick="validate()">Confirm</button>
+        </h2>
+      </form>
+    </div>
+
+    <script lang="Javascript">
+      function validate() {
+        var a = document.getElementById('d').value;
+        var splt = a.split('-');
+        var month = splt[1];
+        var day = splt[2];
+        var year = splt[0];
+
+        alert(
+          'Astrological Sign: ' + " " +
+            getAstrologicalSign(month, day) + " " +
+            '\nChinese Zodiac Sign: ' + " " + getChineseZ(year) +
+            '\nBirthStone: '+ " " +GetBirthStone(month));
+          }
+
+      function getAstrologicalSign(month, day) {
+         if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
+          return ('Capricorn');
+        } else if ((month == 1 && day >= 21) || (month == 2 && day <= 18)) {
+          return ('Aquarius');
+        } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+          return ('Pisces');
+        } else if ((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
+          return ('Aries');
+        } else if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
+          return ('Taurus');
+        } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+          return ('Gemini');
+        } else if ((month == 6 && day >= 22) || (month == 7 && day <= 22)) {
+          return ('Cancer');
+        } else if ((month == 7 && day >= 23) || (month == 8 && day <= 23)) {
+          return ('Leo');
+        } else if ((month == 8 && day >= 24) || (month == 9 && day <= 23)) {
+          return ('Virgo');
+        } else if ((month == 9 && day >= 24) || (month == 10 && day <= 23)) {
+          return ('Libra');
+        } else if ((month == 10 && day >= 24) || (month == 11 && day <= 22)) {
+          return ('Scorpio');
+        } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
+          return ('Sagittarius');
+        }
+      }
+
+      function getChineseZ(year){
+        var toyear = 1997;
+
+        x = (toyear - year) % 12
+        if ((x == 1) || (x == -11)) {
+            return ("Mouse")      }
+            else  {
+             if (x == 0)             {
+             return ("Ox")           }
+             else  {
+              if ((x == 11) || (x == -1)) {
+              return ("Tiger")          }
+              else {
+               if ((x == 10) || (x == -2)) {
+               return ("Rabbit")         }
+               else  {
+                if ((x == 9) || (x == -3))  {
+                return ("Dragon")         }
+                else  {
+                 if ((x == 8) || (x == -4))  {
+                 return ("Snake")          }
+                 else  {
+                  if ((x == 7) || (x == -5))  {
+                  return ("Horse")          }
+                  else  {
+                   if ((x == 6) || (x == -6))  {
+                   return ("Sheep")          }
+                   else  {
+                    if ((x == 5) || (x == -7))  {
+                    return ("Monkey")         }
+                    else  {
+                     if ((x == 4) || (x == -8))  {
+                     return ("Chicken")        }
+                     else  {
+                      if ((x == 3) || (x == -9))  {
+                      return ("Dog")            }
+                      else  {
+                       if ((x == 2) || (x == -10))  {
+                       return ("Pig")             }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+      }
+      function GetBirthStone(month){
+        switch(month){
+          case "01":
+            return("Garnet \nBirth Flower: Carnation");
+            break;
+          case "02":
+            return("Amethyst\nBirth Flower: Violet");
+            break;
+          case "03":
+            return("Aquamarine \nBirth Flower: Jonquil");
+            break;
+          case "04":
+            return("Diamond \nBirth Flower: Sweet Pea");
+            break;
+          case "05":
+            return("Emerald \nBirth Flower: Lily of the Valley");
+            break;
+          case "06":
+            return("Pearl \nBirth Flower: Rose");
+            break;
+          case "07":
+            return("Ruby \nBirth Flower: Larkspur");
+            break;
+          case "08":
+            return("Peridot \nBirth Flower: Gladiola");
+            break;
+          case "09":
+            return("Sapphire \nBirth Flower: Aster");
+            break;
+          case "10":
+            return("Opal \nBirth Flower: Calendula");
+            break;
+          case "11":
+            return("Topaz \nBirth Flower: Chrysanthemum");
+            break;
+          case "12":
+            return("Turquoise \nBirth Flower: Narcissus");
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
